@@ -1,18 +1,17 @@
 from mtcnn.mtcnn import MTCNN
 import cv2
 import os
-from PIL import Image
-
 # Load MTCNN for face detection
 mtcnn_detector = MTCNN()
 
 #Resize img
-input_path = 'detectface\Test5.jpg'
+input_path = 'detectface\Test1.jpg'
 img = cv2.imread(input_path)
-resized_img = cv2.resize(img, (675, 1200))
+resized_img = cv2.resize(img, (800,1000))
 
 cv2.imshow('resize', resized_img)
 cv2.imwrite("Test9.jpg", resized_img)
+resized_img.shape
 
 # Function to detect faces using MTCNN
 def detect_faces_mtcnn(image_path):
